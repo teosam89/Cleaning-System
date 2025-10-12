@@ -1,0 +1,4 @@
+com\cleaningsystem\backend\TestDataInitializer.class
+com\cleaningsystem\backend\FullSystemIntegrationTest.class
+com\cleaningsystem\backend\controller\AuthControllerIntegrationTest.class
+com\cleaningsystem\backend\controller\AuthControllerTest.class
