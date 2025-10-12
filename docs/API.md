@@ -363,16 +363,15 @@ Delete a task (Admin only).
 ## Attendance Endpoints
 
 ### 1. Check In
-Record employee check-in with GPS verification.
+Record employee check-in with timestamp.
 
 **Endpoint:** `POST /attendance/checkin`
 
 **Request Body:**
 ```json
 {
-  "latitude": 3.1390,
-  "longitude": 101.6869,
-  "accuracy": 15.0
+  "location": "Office Building A",
+  "notes": "Arrived on time"
 }
 ```
 
@@ -382,10 +381,7 @@ Record employee check-in with GPS verification.
   "id": 1,
   "userId": 5,
   "checkInTime": "2025-10-12T08:00:00",
-  "checkInLocation": {
-    "latitude": 3.1390,
-    "longitude": 101.6869
-  },
+  "location": "Office Building A",
   "status": "CHECKED_IN",
   "message": "Check-in successful"
 }
@@ -393,8 +389,7 @@ Record employee check-in with GPS verification.
 
 **Status Codes:**
 - `200 OK` - Check-in successful
-- `400 Bad Request` - Already checked in or invalid location
-- `403 Forbidden` - Location outside allowed radius
+- `400 Bad Request` - Already checked in
 
 ---
 
@@ -406,8 +401,6 @@ Record employee check-out.
 **Request Body:**
 ```json
 {
-  "latitude": 3.1390,
-  "longitude": 101.6869,
   "notes": "Completed all assigned tasks"
 }
 ```
