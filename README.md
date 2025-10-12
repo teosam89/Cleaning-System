@@ -421,7 +421,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### Contact
 - **Issues**: [GitHub Issues](https://github.com/teosam89/Cleaning-System/issues)
-- **Email**: support@cleaningsystem.com
+- **Email**: qianyi220822@gmail.com
 - **Documentation**: [Wiki](https://github.com/teosam89/Cleaning-System/wiki)
 
 ---
