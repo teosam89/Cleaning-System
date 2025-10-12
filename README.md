@@ -8,7 +8,7 @@
 [![Vue.js](https://img.shields.io/badge/Vue.js-3.x-brightgreen.svg)](https://vuejs.org/)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0+-blue.svg)](https://www.mysql.com/)
 
-**A comprehensive, enterprise-grade cleaning management system with GPS-based attendance tracking, real-time task management, and role-based access control.**
+**A comprehensive, enterprise-grade cleaning management system with time-based attendance tracking, real-time task management, and role-based access control.**
 
 [Features](#-features) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Architecture](#-architecture) • [Contributing](#-contributing)
 
@@ -37,11 +37,11 @@
 
 ## 🌟 Overview
 
-The **Cleaning Management System** is a full-stack web application designed to streamline cleaning operations for organizations of any size. Built with modern technologies and best practices, it provides real-time task management, GPS-based attendance verification, and comprehensive reporting capabilities.
+The **Cleaning Management System** is a full-stack web application designed to streamline cleaning operations for organizations of any size. Built with modern technologies and best practices, it provides real-time task management, time-based attendance tracking, and comprehensive reporting capabilities.
 
 ### Why This System?
 
-- **📍 GPS-Based Attendance**: Verify employee check-ins with location accuracy
+- **⏰ Time-Based Attendance**: Simple and efficient check-in/check-out tracking
 - **⚡ Real-Time Updates**: Track task progress instantly across all devices
 - **🔐 Secure Authentication**: JWT-based authentication with role-based access control
 - **📊 Comprehensive Reporting**: Generate detailed performance and attendance reports
@@ -72,14 +72,14 @@ The **Cleaning Management System** is a full-stack web application designed to s
 - 📱 **Task Dashboard**: View assigned tasks with priorities and deadlines
 - ✓ **Task Completion**: Mark tasks complete with photo uploads
 - 📸 **Photo Documentation**: Upload before/after photos for task verification
-- ⏰ **Attendance System**: GPS-based check-in/check-out functionality
+- ⏰ **Attendance System**: Simple time-based check-in/check-out functionality
 - 📜 **Attendance History**: View personal attendance records
 - 📢 **View Announcements**: Stay updated with organizational news
 - ❓ **FAQ Access**: Quick access to common questions and procedures
 
 ### Core Features
 - 🔐 **JWT Authentication**: Secure token-based authentication system
-- 🌍 **GPS Verification**: Location-based attendance verification
+- ⏰ **Time Tracking**: Simple and reliable attendance time recording
 - 🖼️ **Image Management**: Upload and manage task completion photos
 - 🔄 **Real-Time Sync**: Instant updates across all connected devices
 - 📱 **Responsive Design**: Works on desktop, tablet, and mobile
@@ -298,8 +298,8 @@ After database setup, use these credentials to log in:
 #### Checking In (Janitor)
 1. Navigate to Attendance page
 2. Click "Check In"
-3. Allow location access
-4. System verifies GPS location
+3. System records current time
+4. Optional: Add location notes
 5. Check-in confirmed
 
 #### Verifying Task Completion (Supervisor)
@@ -439,7 +439,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - ✅ Core Features: Complete
 - ✅ Authentication: Complete
-- ✅ GPS Attendance: Complete
+- ✅ Time-Based Attendance: Complete
 - ✅ Task Management: Complete
 - 🚧 Reporting System: In Progress
 - 📅 Mobile App: Planned
