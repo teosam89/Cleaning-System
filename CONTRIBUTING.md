@@ -4,7 +4,7 @@ First off, thank you for considering contributing to the Cleaning Management Sys
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by our Code of Conduct. By participating, you are expected to uphold this code. Please report unacceptable behavior to support@cleaningsystem.com.
+This project and everyone participating in it is governed by our Code of Conduct. By participating, you are expected to uphold this code. Please report unacceptable behavior to qianyi220822@gmail.com.
 
 ## How Can I Contribute?
 
@@ -241,7 +241,7 @@ Cleaning-System/
 
 * **GitHub Discussions**: For questions and discussions
 * **GitHub Issues**: For bug reports and feature requests
-* **Email**: support@cleaningsystem.com for private inquiries
+* **Email**: qianyi220822@gmail.com for private inquiries
 
 ## Recognition
 
