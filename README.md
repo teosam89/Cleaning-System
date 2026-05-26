@@ -391,19 +391,6 @@ For detailed deployment instructions, see [docs/DEPLOYMENT.md](docs/DEPLOYMENT.m
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
-
----
 
 ## 📄 License
 
@@ -411,47 +398,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📞 Support
-
-### Documentation
-- [Installation Guide](docs/INSTALLATION.md)
-- [API Documentation](docs/API.md)
-- [Architecture Guide](docs/ARCHITECTURE.md)
-- [Deployment Guide](docs/DEPLOYMENT.md)
-
-### Contact
-- **Issues**: [GitHub Issues](https://github.com/teosam89/Cleaning-System/issues)
-- **Email**: qianyi220822@gmail.com
-- **Documentation**: [Wiki](https://github.com/teosam89/Cleaning-System/wiki)
-
----
-
-## 🙏 Acknowledgments
-
-- Spring Boot team for the excellent framework
-- Vue.js community for the reactive framework
-- Vuetify for the beautiful Material Design components
-- All contributors who have helped this project grow
-
----
-
-## 📊 Project Status
-
-- ✅ Core Features: Complete
-- ✅ Authentication: Complete
-- ✅ Time-Based Attendance: Complete
-- ✅ Task Management: Complete
-- 🚧 Reporting System: In Progress
-- 📅 Mobile App: Planned
-
----
-
 <div align="center">
 
-**Made with ❤️ by the Cleaning System Team**
-
-⭐ Star us on GitHub — it helps!
-
-[Report Bug](https://github.com/teosam89/Cleaning-System/issues) • [Request Feature](https://github.com/teosam89/Cleaning-System/issues)
-
-</div>
