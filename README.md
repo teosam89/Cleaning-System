@@ -252,7 +252,7 @@ monitored.
 
 ## Author
 
-Teo Boon Shen, [zerofield.dev](https://zerofield.dev)
+Teo Boon Shen · [zerofield.dev](https://zerofield.dev) · case study: [zerofield.dev/projects/cleaning](https://zerofield.dev/projects/cleaning/)
 
 ## License
 
