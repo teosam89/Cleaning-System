@@ -227,7 +227,7 @@ When this repository was prepared for archiving, the following was checked by ha
 - Access is checked on the server (URL rules plus `@PreAuthorize`), not only in the frontend. Cross-origin calls are
   limited to the configured origins.
 
-This was a solo project and it is not production-ready. Known limitations:
+This is a coursework project and it is not production-ready. Known limitations:
 
 - No automated tests.
 - `GET /api/files/**` is public, so uploaded files can be fetched without signing in.
@@ -245,8 +245,10 @@ This was a solo project and it is not production-ready. Known limitations:
 
 ## Status
 
-Built by one person; the commit history runs from October 2025 to May 2026. The project is finished and **archived**:
-it is not maintained, and issues and pull requests are not monitored.
+A team coursework project. The code was uploaded to this repository by one team member (the author below); the other
+contributors could not be found, so the commit history, which runs from October 2025 to May 2026, shows only that
+account. The project is finished and **archived**: it is not maintained, and issues and pull requests are not
+monitored.
 
 ## Author
 
