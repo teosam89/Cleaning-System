@@ -7,7 +7,6 @@ import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 // import axios from "axios";
 // import Vue from "vue";
 //
-// axios.defaults.baseURL = "http://localhost:8080/api"; // 后端 API 地址
 // Vue.prototype.$axios = axios;
 
 const app = createApp(App);

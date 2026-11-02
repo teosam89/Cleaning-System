@@ -1,402 +1,257 @@
-<div align="center">
+<p align="center">
+  <img src="docs/banner.svg" alt="Cleaning System: tasks, attendance and roles for a cleaning team" width="100%">
+</p>
 
-# 🧹 Cleaning Management System
+<p align="center">
+  <strong>Cleaning System is a web app for running a cleaning team: admins and supervisors schedule tasks, janitors claim and complete them, and attendance is recorded with check-in and check-out.</strong>
+</p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Java](https://img.shields.io/badge/Java-17+-orange.svg)](https://www.oracle.com/java/)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen.svg)](https://spring.io/projects/spring-boot)
-[![Vue.js](https://img.shields.io/badge/Vue.js-3.x-brightgreen.svg)](https://vuejs.org/)
-[![MySQL](https://img.shields.io/badge/MySQL-8.0+-blue.svg)](https://www.mysql.com/)
+<p align="center">
+  <img alt="Java 17" src="https://img.shields.io/badge/Java-17-0891b2?style=flat-square&labelColor=1f2329&logo=openjdk&logoColor=white">
+  <img alt="Spring Boot 3.3.2" src="https://img.shields.io/badge/Spring_Boot-3.3.2-0891b2?style=flat-square&labelColor=1f2329&logo=springboot&logoColor=white">
+  <img alt="Vue 3" src="https://img.shields.io/badge/Vue-3-0891b2?style=flat-square&labelColor=1f2329&logo=vuedotjs&logoColor=white">
+  <img alt="MySQL 8" src="https://img.shields.io/badge/MySQL-8-0891b2?style=flat-square&labelColor=1f2329&logo=mysql&logoColor=white">
+  <img alt="Status: archived" src="https://img.shields.io/badge/status-archived-0891b2?style=flat-square&labelColor=1f2329">
+  <img alt="License: all rights reserved" src="https://img.shields.io/badge/license-All_rights_reserved-0891b2?style=flat-square&labelColor=1f2329">
+</p>
 
-**A comprehensive, enterprise-grade cleaning management system with time-based attendance tracking, real-time task management, and role-based access control.**
+<p align="center">
+  <a href="#about">About</a> ·
+  <a href="#features">Features</a> ·
+  <a href="#how-it-works">How it works</a> ·
+  <a href="#architecture">Architecture</a> ·
+  <a href="#tech-stack">Tech stack</a> ·
+  <a href="#getting-started">Getting started</a> ·
+  <a href="#testing">Testing</a> ·
+  <a href="#security-and-known-limitations">Security</a>
+</p>
 
-[Features](#-features) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Architecture](#-architecture) • [Contributing](#-contributing)
+## About
 
-</div>
+Cleaning System (called CleanMS in the interface) is a full-stack web app for coordinating the work of a cleaning
+team. It has three roles. **Admins** manage staff, schedule tasks on a calendar and post announcements.
+**Supervisors** have their own staff, calendar and team-task pages. **Janitors** see their own tasks, claim open ones
+from a shared Task Wall, record their work and check in and out.
 
----
+It is a Spring Boot REST API with JWT login and role-based access, a Vue 3 single-page app, and a MySQL database.
+All the data shown in the screenshots is demo data created for this README; there is no real facility behind it.
 
-## 📋 Table of Contents
+## Features
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [System Architecture](#-system-architecture)
-- [Quick Start](#-quick-start)
-- [Installation](#-installation)
-- [Configuration](#-configuration)
-- [Usage](#-usage)
-- [API Documentation](#-api-documentation)
-- [Testing](#-testing)
-- [Deployment](#-deployment)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Support](#-support)
+<table>
+  <tr>
+    <td valign="middle">
+      <strong>Sign in by role</strong><br>
+      Username and password login. The token carries the role, and each role lands in its own area of the app: admin,
+      supervisor or janitor.
+    </td>
+    <td width="400" align="center"><img src="docs/screenshots/login.webp" width="380" alt="Login screen of CleanMS"></td>
+  </tr>
+  <tr>
+    <td valign="middle">
+      <strong>Task calendar</strong><br>
+      Month, week and day views of scheduled tasks, coloured by status, with progress and counters for total,
+      completed, upcoming and overdue. Admins create and assign tasks, search them in a filtered list and run batch
+      operations on them.
+    </td>
+    <td width="400" align="center"><img src="docs/screenshots/calendar.webp" width="380" alt="Admin task calendar for November 2026 with tasks coloured by status"></td>
+  </tr>
+  <tr>
+    <td valign="middle">
+      <strong>Announcements and the Task Wall</strong><br>
+      Admins post announcements with a priority, a type and an audience, and publish public tasks to the Task Wall.
+      Weekly routines can generate recurring tasks.
+    </td>
+    <td width="400" align="center"><img src="docs/screenshots/announcements.webp" width="380" alt="Admin page with system announcements and the public Task Wall"></td>
+  </tr>
+  <tr>
+    <td valign="middle">
+      <strong>Task Wall for janitors</strong><br>
+      Janitors browse the open public tasks, filter them by priority and location, and claim one.
+    </td>
+    <td width="400" align="center"><img src="docs/screenshots/task-wall.webp" width="380" alt="Janitor Task Wall listing urgent and normal public tasks with a Claim Task button"></td>
+  </tr>
+  <tr>
+    <td valign="middle">
+      <strong>My tasks</strong><br>
+      A janitor's own tasks with pending, in-progress, completed and overdue counters. A task is started from its
+      detail page, completed with notes, and a completion can be undone.
+    </td>
+    <td width="400" align="center"><img src="docs/screenshots/my-tasks.webp" width="380" alt="Janitor My Tasks page with status counters and one completed task"></td>
+  </tr>
+  <tr>
+    <td valign="middle">
+      <strong>Attendance</strong><br>
+      Check in and check out with timestamps, today's hours, overtime and monthly hours, a list of recent attendance
+      and a full history page.
+    </td>
+    <td width="400" align="center"><img src="docs/screenshots/attendance.webp" width="380" alt="Attendance page after a check-in, with the Check Out button and hours summary"></td>
+  </tr>
+</table>
 
----
+Also in the app:
 
-## 🌟 Overview
+- **Staff profiles.** Admin and supervisor pages for managing staff, and a profile page for janitors.
+- **Announcements for janitors,** an FAQ page and a task photo page.
+- **Reports.** Report endpoints under `/api/admin/reports`, available to admins only.
+- **Image upload.** Endpoints for uploading and fetching images, limited to 5 MB per file.
 
-The **Cleaning Management System** is a full-stack web application designed to streamline cleaning operations for organizations of any size. Built with modern technologies and best practices, it provides real-time task management, time-based attendance tracking, and comprehensive reporting capabilities.
+## How it works
 
-### Why This System?
+<p align="center">
+  <img src="docs/flow.svg" alt="A task moves from creation, to assignment or claiming, to start, completion and tracking" width="100%">
+</p>
 
-- **⏰ Time-Based Attendance**: Simple and efficient check-in/check-out tracking
-- **⚡ Real-Time Updates**: Track task progress instantly across all devices
-- **🔐 Secure Authentication**: JWT-based authentication with role-based access control
-- **📊 Comprehensive Reporting**: Generate detailed performance and attendance reports
-- **📱 Mobile-Friendly**: Responsive design works seamlessly on all devices
-- **🔄 RESTful API**: Well-documented API for easy integration
+## Architecture
 
----
+<p align="center">
+  <img src="docs/architecture.svg" alt="Architecture: a Vue 3 app talks REST with JWT to a Spring Boot backend with security, controllers, services and repositories, backed by MySQL 8; Docker Compose runs the database and the backend" width="100%">
+</p>
 
-## ✨ Features
+### Key
 
-### For Administrators
-- 👥 **Staff Management**: Add, edit, and manage staff profiles with role assignments
-- 📋 **Task Assignment**: Create and assign cleaning tasks with detailed specifications
-- 📊 **Dashboard Analytics**: View real-time statistics and performance metrics
-- 📢 **Announcements**: Broadcast important messages to all staff members
-- 📈 **Reports**: Generate comprehensive reports on tasks, attendance, and performance
-- 🗓️ **Calendar View**: Visualize tasks and schedules in an interactive calendar
-- 👁️ **Task Monitoring**: Real-time tracking of task status and completion
+1. **Role rules in two layers.** `SecurityConfig` has URL rules per role, and controller methods add `@PreAuthorize`
+   checks. The router guards in the frontend only hide pages; the backend is what enforces access. Actions janitors
+   need (start, claim, undo a completion) are open to any signed-in user; deleting, assigning and batch-editing tasks
+   needs an admin or a supervisor.
+2. **The schema comes from Hibernate.** `ddl-auto=update` creates and changes the tables, so there are no migration
+   scripts. Demo users are created on the first start, when the user table is empty.
 
-### For Supervisors
-- 👀 **Team Oversight**: Monitor assigned team members and their tasks
-- ✅ **Task Verification**: Review and approve completed tasks with photo evidence
-- 📊 **Team Performance**: Track team statistics and productivity metrics
-- 📝 **Task Management**: Assign and reassign tasks to team members
-- 🎯 **Performance Tracking**: Monitor individual and team KPIs
+### Design decisions
 
-### For Janitors
-- 📱 **Task Dashboard**: View assigned tasks with priorities and deadlines
-- ✓ **Task Completion**: Mark tasks complete with photo uploads
-- 📸 **Photo Documentation**: Upload before/after photos for task verification
-- ⏰ **Attendance System**: Simple time-based check-in/check-out functionality
-- 📜 **Attendance History**: View personal attendance records
-- 📢 **View Announcements**: Stay updated with organizational news
-- ❓ **FAQ Access**: Quick access to common questions and procedures
+- **Stateless API.** Login returns a JWT (valid for one day by default) that the app sends in the `Authorization`
+  header; there are no server sessions. Passwords are stored with BCrypt.
+- **One app, three areas.** Admin, supervisor and janitor pages live in the same Vue app under separate routes and
+  layouts, so shared dialogs and request code are reused.
+- **Attendance is timestamp-only.** Check-in and check-out record the time; location checks were dropped.
+- **Settings come from the environment.** The database password and the JWT secret have no defaults, and the backend
+  refuses to start until they are set.
 
-### Core Features
-- 🔐 **JWT Authentication**: Secure token-based authentication system
-- ⏰ **Time Tracking**: Simple and reliable attendance time recording
-- 🖼️ **Image Management**: Upload and manage task completion photos
-- 🔄 **Real-Time Sync**: Instant updates across all connected devices
-- 📱 **Responsive Design**: Works on desktop, tablet, and mobile
-- 🎨 **Modern UI/UX**: Clean, intuitive interface built with Vuetify
-- 🔍 **Advanced Filtering**: Search and filter tasks by multiple criteria
-- 📅 **Weekly Routines**: Set up recurring weekly cleaning schedules
+## Tech stack
 
----
+Versions are the constraints declared in `pom.xml` and `cleaning-system-frontend/package.json`.
 
-## 🛠️ Tech Stack
+| Layer | Technology |
+|---|---|
+| Backend | Java 17, Spring Boot 3.3.2, Spring Security, Spring Data JPA (Hibernate), jjwt `0.11.5`, MySQL Connector/J, Maven |
+| Frontend | Vue `^3.2.13`, Vue Router `^4.0.3`, Element Plus `^2.10.5`, Chart.js `^4.5.0` with vue-chartjs `^5.3.2`, Axios `^1.11.0`, Vue CLI `~5.0.0` |
+| Database | MySQL 8.0 |
+| Run | Docker Compose (`mysql:8.0`, built on `maven:3.9-eclipse-temurin-17`, runs on `eclipse-temurin:17-jre`) |
 
-### Backend
-- **Framework**: Spring Boot 3.x
-- **Language**: Java 17+
-- **Security**: Spring Security + JWT
-- **Database**: MySQL 8.0+
-- **ORM**: Spring Data JPA / Hibernate
-- **Build Tool**: Maven
-- **API**: RESTful architecture
-
-### Frontend
-- **Framework**: Vue.js 3.x
-- **UI Library**: Vuetify 3.x
-- **State Management**: Vue Router
-- **HTTP Client**: Axios
-- **Build Tool**: Vue CLI / Webpack
-- **Maps**: Geolocation API
-
-### DevOps & Tools
-- **Version Control**: Git
-- **Database Migration**: SQL Scripts
-- **API Testing**: Postman (recommended)
-- **Code Quality**: ESLint, Prettier
-
----
-
-## 🏗️ System Architecture
+## Project structure
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                         Frontend Layer                      │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  │
-│  │  Admin   │  │Supervisor│  │ Janitor  │  │  Login   │  │
-│  │   View   │  │   View   │  │   View   │  │   View   │  │
-│  └──────────┘  └──────────┘  └──────────┘  └──────────┘  │
-│              Vue.js + Vuetify + Vue Router                 │
-└─────────────────────────────────────────────────────────────┘
-                             │
-                    HTTP/HTTPS (REST API)
-                             │
-┌─────────────────────────────────────────────────────────────┐
-│                      Backend Layer (Spring Boot)            │
-│  ┌──────────────────────────────────────────────────────┐  │
-│  │              Controllers (REST Endpoints)            │  │
-│  ├──────────────────────────────────────────────────────┤  │
-│  │         Security Layer (JWT + Spring Security)       │  │
-│  ├──────────────────────────────────────────────────────┤  │
-│  │                  Service Layer                       │  │
-│  │  (Business Logic, Validation, GPS Verification)      │  │
-│  ├──────────────────────────────────────────────────────┤  │
-│  │              Repository Layer (JPA)                  │  │
-│  └──────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────┘
-                             │
-┌─────────────────────────────────────────────────────────────┐
-│                      Database Layer                         │
-│                      MySQL 8.0+                             │
-│  ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐  │
-│  │ Users  │ │ Tasks  │ │Attend. │ │ Images │ │Announce│  │
-│  └────────┘ └────────┘ └────────┘ └────────┘ └────────┘  │
-└─────────────────────────────────────────────────────────────┘
+cleaning-system-backend/      Spring Boot app (Java 17, Maven) and its Dockerfile
+  src/main/java/.../backend/
+    config/ security/         security rules, JWT filter, 401 handler
+    controller/               11 REST controllers
+    service/ repository/      business logic, Spring Data JPA
+    entity/ dto/              7 entities, request and response objects
+  src/main/resources/         application.properties (reads the environment)
+cleaning-system-frontend/     Vue 3 app (Vue CLI)
+  src/views/                  admin, supervisor and janitor pages
+  src/components/             layouts and shared dialogs
+  src/router/                 routes with role guards
+docs/API.md                   REST API reference
+docker-compose.yml            MySQL and backend
+.env.example                  settings you must provide
 ```
 
-### Key Design Patterns
-- **MVC Architecture**: Clear separation of concerns
-- **Repository Pattern**: Data access abstraction
-- **Service Layer Pattern**: Business logic encapsulation
-- **DTO Pattern**: Data transfer objects for API responses
-- **JWT Authentication**: Stateless authentication mechanism
+## Getting started
 
----
+You need Docker with Compose, and Node.js for the frontend (the production build was last checked with Node 24). The
+JDK is not needed on your machine; the backend is built inside Docker.
 
-## 🚀 Quick Start
+1. **Clone the repository.**
 
-### Prerequisites
-
-Ensure you have the following installed:
-
-| Tool | Version | Download |
-|------|---------|----------|
-| Java JDK | 17 or higher | [Download](https://www.oracle.com/java/technologies/downloads/) |
-| Maven | 3.6+ | [Download](https://maven.apache.org/download.cgi) |
-| Node.js | 14+ | [Download](https://nodejs.org/) |
-| MySQL | 8.0+ | [Download](https://dev.mysql.com/downloads/) |
-| Git | Latest | [Download](https://git-scm.com/) |
-
-### One-Click Setup (Windows)
-
-1. **Clone the repository**
-   ```bash
+   ```
    git clone https://github.com/teosam89/Cleaning-System.git
    cd Cleaning-System
    ```
+2. **Create `.env`.** Copy `.env.example` to `.env` and set `DB_PASSWORD` and `JWT_SECRET` (at least 32 characters;
+   `openssl rand -base64 48` makes one). `.env` is git-ignored.
+3. **Start the database and the backend.**
 
-2. **Set up the database**
-   ```sql
-   CREATE DATABASE cleaning_system;
-   USE cleaning_system;
-   SOURCE cleaning_system_2025_10_06_14_42_40-dump.sql;
+   ```
+   docker compose up -d --build
    ```
 
-3. **Run the application**
-   ```bash
-   # Simply double-click
-   start-full-stack.bat
+   The API is at `http://localhost:8765`; `GET /api/health` should answer "Service is running normally".
+4. **Start the frontend.**
+
+   ```
+   cd cleaning-system-frontend
+   npm ci
+   npm run serve
    ```
 
-4. **Access the application**
-   - Frontend: http://localhost:3000
-   - Backend API: http://localhost:8765/api
+   The app is at `http://localhost:3000`. The dev server proxies `/api` to the backend on port 8765.
 
----
+**Demo accounts** are created on the first start. They are for trying the app only; change or remove them
+(`DataInitializer.java`) before any real use.
 
-## 📦 Installation
+| Username | Password | Role |
+|---|---|---|
+| `admin` | `admin123` | admin |
+| `supervisor`, `sarah` | `supervisor123`, `sarah123` | supervisor |
+| `maria`, `john` | `maria123`, `john123` | janitor |
+| `mike` | `mike123` | cleaner |
 
-### Backend Setup
+**Settings** (read from the environment; `docker compose` passes the first three from `.env`):
 
-```bash
-# Navigate to backend directory
-cd cleaning-system-backend
+| Variable | Default | Purpose |
+|---|---|---|
+| `DB_PASSWORD` | none, required | Password of the MySQL root user |
+| `JWT_SECRET` | none, required | Key that signs login tokens, at least 32 characters |
+| `CORS_ALLOWED_ORIGINS` | `http://localhost:3000` | Comma-separated browser origins allowed to call the API |
+| `JWT_EXPIRATION_MS` | `86400000` (one day) | Token lifetime |
+| `DB_URL`, `DB_USERNAME` | local MySQL, `root` | Only needed when running the backend outside Docker |
 
-# Install dependencies and build
-mvn clean install
+## Testing
 
-# Run the application
-mvn spring-boot:run
-```
+**There are no automated tests.** `pom.xml` declares test dependencies, but `src/test` does not exist.
 
-The backend server will start on `http://localhost:8765`
+When this repository was prepared for archiving, the following was checked by hand:
 
-### Frontend Setup
+- The production frontend build (`npm run build`) passes.
+- The backend starts in Docker on JDK 17, and refuses to start without `DB_PASSWORD` or `JWT_SECRET`.
+- With the demo accounts, a janitor is refused on deleting, assigning and batch-editing tasks (`403`) and on the
+  admin-only data endpoint (`401`), while starting, claiming and undoing a task still work. Admins and supervisors
+  get through to the task endpoints (the checks used task IDs that do not exist, so nothing was changed).
+- A browser request from an origin that is not in `CORS_ALLOWED_ORIGINS` is rejected.
 
-```bash
-# Navigate to frontend directory
-cd cleaning-system-frontend
+## Security and known limitations
 
-# Install dependencies
-npm install
+- Passwords use BCrypt. Login tokens are signed JWTs with a one-day lifetime by default. No secret is committed:
+  `.env` is git-ignored and the backend needs the settings above.
+- Access is checked on the server (URL rules plus `@PreAuthorize`), not only in the frontend. Cross-origin calls are
+  limited to the configured origins.
 
-# Run development server
-npm run serve
-```
+This was a solo project and it is not production-ready. Known limitations:
 
-The frontend will be available at `http://localhost:3000`
+- No automated tests.
+- `GET /api/files/**` is public, so uploaded files can be fetched without signing in.
+- The read-only task endpoints (list, search, statistics) are open to any signed-in user; only the endpoints that
+  change tasks are role-checked.
+- URL-rule denials answer `401`, while `@PreAuthorize` denials answer `403`.
+- The login token is kept in `localStorage`.
+- Tables are created by Hibernate (`ddl-auto=update`) instead of migrations.
+- Times are stored in UTC and some pages show them unconverted: on the attendance page the check-in time can differ
+  from the clock by the local UTC offset.
+- The admin dashboard's "Recent Activities" shows a placeholder entry ("API Test").
+- `POST /api/tasks/{id}/photos` is a stub that returns made-up metadata, and `POST /api/data/generate-attendance` is a
+  developer data seeder with hard-coded janitor IDs (it is admin-only now).
+- Some files are very large: `AdminController` has about 1,400 lines and several Vue views are over 70 KB.
 
----
+## Status
 
-## ⚙️ Configuration
+Built by one person; the commit history runs from October 2025 to May 2026. The project is finished and **archived**:
+it is not maintained, and issues and pull requests are not monitored.
 
-### Backend Configuration
+## Author
 
-Edit `cleaning-system-backend/src/main/resources/application.properties`:
+Teo Boon Shen, [zerofield.dev](https://zerofield.dev)
 
-```properties
-# Database Configuration
-spring.datasource.url=jdbc:mysql://localhost:3306/cleaning_system
-spring.datasource.username=your_username
-spring.datasource.password=your_password
+## License
 
-# JWT Configuration
-app.jwt.secret=your-secret-key-here
-app.jwt.expiration=86400000
-
-# Server Configuration
-server.port=8765
-
-# File Upload Configuration
-spring.servlet.multipart.max-file-size=10MB
-spring.servlet.multipart.max-request-size=10MB
-```
-
-### Frontend Configuration
-
-Edit `cleaning-system-frontend/src/utils/request.js`:
-
-```javascript
-const API_BASE_URL = 'http://localhost:8765/api';
-```
-
----
-
-## 💻 Usage
-
-### Default Credentials
-
-After database setup, use these credentials to log in:
-
-| Role | Username | Password | Description |
-|------|----------|----------|-------------|
-| Admin | admin | admin123 | Full system access |
-| Supervisor | supervisor1 | super123 | Team management access |
-| Janitor | janitor1 | janitor123 | Task execution access |
-
-> ⚠️ **Security Note**: Change default passwords immediately in production!
-
-### Common Operations
-
-#### Creating a Task (Admin)
-1. Navigate to Task Management
-2. Click "Create Task"
-3. Fill in task details (title, description, location, priority)
-4. Assign to janitor
-5. Set deadline
-6. Submit
-
-#### Checking In (Janitor)
-1. Navigate to Attendance page
-2. Click "Check In"
-3. System records current time
-4. Optional: Add location notes
-5. Check-in confirmed
-
-#### Verifying Task Completion (Supervisor)
-1. Navigate to Task Monitor
-2. View completed tasks
-3. Review uploaded photos
-4. Approve or request revision
-
----
-
-## 📚 API Documentation
-
-### Authentication Endpoints
-
-```
-POST   /api/auth/login          # User login
-POST   /api/auth/register       # User registration
-GET    /api/auth/me             # Get current user
-```
-
-### Task Management
-
-```
-GET    /api/tasks               # Get all tasks
-GET    /api/tasks/{id}          # Get task by ID
-POST   /api/tasks               # Create new task
-PUT    /api/tasks/{id}          # Update task
-DELETE /api/tasks/{id}          # Delete task
-GET    /api/tasks/filter        # Filter tasks
-```
-
-### Attendance
-
-```
-POST   /api/attendance/checkin  # Check in
-POST   /api/attendance/checkout # Check out
-GET    /api/attendance/status   # Get attendance status
-GET    /api/attendance/history  # Get attendance history
-```
-
-For complete API documentation, see [docs/API.md](docs/API.md)
-
----
-
-## 🧪 Testing
-
-### Backend Testing
-
-```bash
-cd cleaning-system-backend
-mvn test
-```
-
-### Frontend Testing
-
-```bash
-cd cleaning-system-frontend
-npm run test:unit
-```
-
----
-
-## 🚢 Deployment
-
-### Production Build
-
-#### Backend
-```bash
-cd cleaning-system-backend
-mvn clean package
-java -jar target/cleaning-system-backend-1.0.0.jar
-```
-
-#### Frontend
-```bash
-cd cleaning-system-frontend
-npm run build
-# Deploy the 'dist' folder to your web server
-```
-
-### Docker Deployment (Optional)
-
-```bash
-# Coming soon
-docker-compose up -d
-```
-
-For detailed deployment instructions, see [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)
-
----
-
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-<div align="center">
-
+All rights reserved.

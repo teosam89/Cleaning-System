@@ -33,3 +33,9 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Backend build output and uploaded files
+target/
+*/target/
+uploads/
+*/uploads/
