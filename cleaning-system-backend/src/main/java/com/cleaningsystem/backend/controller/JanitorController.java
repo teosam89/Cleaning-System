@@ -24,7 +24,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 @RestController
 @RequestMapping("/api/janitors")
-@CrossOrigin(origins = "*")
 public class JanitorController {
     
     @Autowired

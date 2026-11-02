@@ -31,7 +31,6 @@ import java.time.YearMonth;
  */
 @RestController
 @RequestMapping("/api/supervisor")
-@CrossOrigin(origins = "*")
 public class SupervisorController {
     
     private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(SupervisorController.class);

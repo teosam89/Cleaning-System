@@ -22,7 +22,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "*")
 public class ImageController {
     
     private static final Logger logger = LoggerFactory.getLogger(ImageController.class);

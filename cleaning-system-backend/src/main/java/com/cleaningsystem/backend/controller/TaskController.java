@@ -27,7 +27,6 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/tasks")
-@CrossOrigin(origins = "*")
 public class TaskController {
     
     @Autowired
@@ -270,6 +269,7 @@ public class TaskController {
     
     // Assign task to janitor - Fixed to prevent Jackson serialization issues with Hibernate proxies
     @PutMapping("/{id}/assign")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERVISOR')")
     public ResponseEntity<Map<String, Object>> assignTask(@PathVariable Long id, 
                                                           @RequestBody Map<String, Long> assignmentData) {
         try {
@@ -348,6 +348,7 @@ public class TaskController {
     
     // Delete task
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERVISOR')")
     public ResponseEntity<Map<String, String>> deleteTask(@PathVariable Long id) {
         try {
             boolean deleted = taskService.deleteTask(id);
@@ -409,6 +410,7 @@ public class TaskController {
     
     // Get tasks assigned by admin - Fixed to prevent Jackson serialization issues with Hibernate proxies
     @GetMapping("/assigned-by/{adminId}")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERVISOR')")
     public ResponseEntity<List<Map<String, Object>>> getTasksByAdmin(@PathVariable Long adminId) {
         try {
             List<Task> tasks = taskService.getTasksByAdmin(adminId);
@@ -423,6 +425,7 @@ public class TaskController {
     
     // Update overdue tasks (utility endpoint)
     @PostMapping("/update-overdue")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERVISOR')")
     public ResponseEntity<Map<String, String>> updateOverdueTasks() {
         try {
             taskService.updateOverdueTasks();
@@ -451,6 +454,7 @@ public class TaskController {
     
     // Batch operations endpoint
     @PostMapping("/batch")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERVISOR')")
     public ResponseEntity<Map<String, Object>> performBatchOperation(@RequestBody BatchTaskRequest batchRequest) {
         try {
             Map<String, Object> result = taskService.performBatchOperation(batchRequest);

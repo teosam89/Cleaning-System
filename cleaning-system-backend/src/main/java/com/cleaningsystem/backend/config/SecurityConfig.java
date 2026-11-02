@@ -3,6 +3,7 @@ package com.cleaningsystem.backend.config;
 import com.cleaningsystem.backend.security.JwtAuthenticationEntryPoint;
 import com.cleaningsystem.backend.security.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -18,6 +19,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Spring Security Configuration for JWT Authentication
@@ -35,7 +37,10 @@ public class SecurityConfig {
     
     @Autowired
     private JwtAuthenticationFilter jwtAuthenticationFilter;
-    
+
+    @Value("${app.cors.allowed-origins}")
+    private List<String> allowedOrigins;
+
     /**
      * Configure HTTP Security with JWT authentication
      */
@@ -93,6 +98,9 @@ public class SecurityConfig {
                 // Attendance endpoints - authenticated users (require JANITOR or CLEANER role)
                 .requestMatchers("/api/attendance/**").hasAnyRole("JANITOR", "CLEANER", "ADMIN", "SUPERVISOR")
                 
+                // Test-data generator - ADMIN only
+                .requestMatchers("/api/data/**").hasRole("ADMIN")
+
                 // Image upload endpoints - authenticated users only
                 .requestMatchers(HttpMethod.POST, "/api/upload/**").authenticated()
                 .requestMatchers(HttpMethod.GET, "/api/images/**").authenticated()
@@ -119,8 +127,8 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         
-        // Allow specific origins (configure for production)
-        configuration.setAllowedOriginPatterns(Arrays.asList("*"));
+        // Only the configured browser origins may call the API (app.cors.allowed-origins)
+        configuration.setAllowedOrigins(allowedOrigins);
         
         // Allow specific HTTP methods
         configuration.setAllowedMethods(Arrays.asList(
