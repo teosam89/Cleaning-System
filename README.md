@@ -12,7 +12,7 @@
   <img alt="Vue 3" src="https://img.shields.io/badge/Vue-3-0891b2?style=flat-square&labelColor=1f2329&logo=vuedotjs&logoColor=white">
   <img alt="MySQL 8" src="https://img.shields.io/badge/MySQL-8-0891b2?style=flat-square&labelColor=1f2329&logo=mysql&logoColor=white">
   <img alt="Status: archived" src="https://img.shields.io/badge/status-archived-0891b2?style=flat-square&labelColor=1f2329">
-  <img alt="License: all rights reserved" src="https://img.shields.io/badge/license-All_rights_reserved-0891b2?style=flat-square&labelColor=1f2329">
+  <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-0891b2?style=flat-square&labelColor=1f2329">
 </p>
 
 <p align="center">
@@ -256,4 +256,4 @@ Teo Boon Shen, [zerofield.dev](https://zerofield.dev)
 
 ## License
 
-All rights reserved.
+MIT. See [LICENSE](LICENSE).
