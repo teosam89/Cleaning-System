@@ -25,7 +25,6 @@ import java.util.stream.Collectors;
  */
 @RestController
 @RequestMapping("/api/announcements")
-@CrossOrigin(origins = "*")
 public class AnnouncementController {
     
     @Autowired

@@ -20,7 +20,6 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/api/data")
-@CrossOrigin(origins = "*")
 public class DataGenerationController {
 
     @Autowired

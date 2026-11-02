@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="632" viewBox="0 0 1280 632" role="img" aria-labelledby="t d">
+<title id="t">Architecture</title>
+<desc id="d">A Vue 3 single-page app talks REST with JWT to a Spring Boot backend (security, controllers, services, repositories) that uses MySQL 8; Docker Compose runs the database and the backend.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1.2 L9 5 L1 8.8" fill="none" stroke="#0891b2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker><marker id="ai" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1.2 L9 5 L1 8.8" fill="none" stroke="#1f2329" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="1280" height="632" rx="16" fill="#faf9f5"/>
+<text x="44" y="46" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="11" font-weight="700" fill="#0891b2" text-anchor="start" letter-spacing="2.2">ARCHITECTURE</text>
+<rect x="44" y="74" width="250" height="250" rx="12" fill="#ffffff" stroke="#e2dfd5" stroke-width="1"/>
+<text x="64" y="106" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1f2329" text-anchor="start">Vue 3 app</text>
+<text x="64" y="126" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5a6068" text-anchor="start">Vue CLI · Element Plus · Chart.js</text>
+<rect x="64" y="144" width="210" height="116" rx="8" fill="#f3f1eb"/>
+<text x="78" y="164" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="9.5" font-weight="700" fill="#5a6068" text-anchor="start" letter-spacing="1.6">SRC/VIEWS</text>
+<text x="78" y="182.0" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="10.5" font-weight="400" fill="#1f2329" text-anchor="start">admin  · dashboard, staff,</text>
+<text x="78" y="195.5" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="10.5" font-weight="400" fill="#1f2329" text-anchor="start">         calendar, announcements</text>
+<text x="78" y="209.0" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="10.5" font-weight="400" fill="#1f2329" text-anchor="start">supervisor · staff, team tasks,</text>
+<text x="78" y="222.5" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="10.5" font-weight="400" fill="#1f2329" text-anchor="start">                calendar</text>
+<text x="78" y="236.0" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="10.5" font-weight="400" fill="#1f2329" text-anchor="start">janitor · tasks, task wall,</text>
+<text x="78" y="249.5" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="10.5" font-weight="400" fill="#1f2329" text-anchor="start">          attendance, FAQ</text>
+<text x="64" y="286" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#5a6068" text-anchor="start">Router guards by role;</text>
+<text x="64" y="302" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#5a6068" text-anchor="start">JWT kept in localStorage.</text>
+<rect x="44" y="352" width="250" height="92" rx="12" fill="#ffffff" stroke="#e2dfd5" stroke-width="1"/>
+<text x="64" y="382" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1f2329" text-anchor="start">Dev server proxy</text>
+<text x="64" y="402" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#5a6068" text-anchor="start">vue.config.js sends /api to</text>
+<text x="64" y="418" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#5a6068" text-anchor="start">the backend on port 8765.</text>
+<rect x="380" y="74" width="560" height="466" rx="16" fill="#f3f1eb" stroke="#e2dfd5"/>
+<text x="400" y="102" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="10.5" font-weight="700" fill="#5a6068" text-anchor="start" letter-spacing="1.6">SPRING BOOT 3.3.2 · JAVA 17</text>
+<rect x="400" y="120" width="520" height="86" rx="12" fill="#ffffff" stroke="#e2dfd5" stroke-width="1"/>
+<text x="420" y="150" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1f2329" text-anchor="start">Security</text>
+<text x="420" y="172" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="12" font-weight="400" fill="#1f2329" text-anchor="start">JwtAuthenticationFilter · SecurityConfig · @PreAuthorize</text>
+<text x="420" y="191" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#5a6068" text-anchor="start">URL role rules plus method checks; BCrypt; stateless</text>
+<circle cx="896" cy="144" r="11" fill="#0891b2"/><text x="896" y="148" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<rect x="400" y="228" width="520" height="86" rx="12" fill="#ffffff" stroke="#e2dfd5" stroke-width="1"/>
+<text x="420" y="258" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1f2329" text-anchor="start">Controllers</text>
+<text x="420" y="280" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="12" font-weight="400" fill="#1f2329" text-anchor="start">11 controllers · 135 REST endpoints</text>
+<text x="420" y="299" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#5a6068" text-anchor="start">auth · admin · supervisor · tasks · attendance · announcements</text>
+<rect x="400" y="336" width="520" height="86" rx="12" fill="#ffffff" stroke="#e2dfd5" stroke-width="1"/>
+<text x="420" y="366" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1f2329" text-anchor="start">Services</text>
+<text x="420" y="388" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="12" font-weight="400" fill="#1f2329" text-anchor="start">9 services · DTOs</text>
+<text x="420" y="407" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#5a6068" text-anchor="start">business rules, validation, task and attendance logic</text>
+<rect x="400" y="444" width="520" height="86" rx="12" fill="#ffffff" stroke="#e2dfd5" stroke-width="1"/>
+<text x="420" y="474" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1f2329" text-anchor="start">Repositories</text>
+<text x="420" y="496" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="12" font-weight="400" fill="#1f2329" text-anchor="start">7 Spring Data JPA repositories</text>
+<text x="420" y="515" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#5a6068" text-anchor="start">Hibernate creates the schema (ddl-auto=update)</text>
+<circle cx="896" cy="468" r="11" fill="#0891b2"/><text x="896" y="472" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+<path d="M660.0 206 V228" stroke="#1f2329" stroke-width="1.5" fill="none" marker-end="url(#ai)"/>
+<path d="M660.0 314 V336" stroke="#1f2329" stroke-width="1.5" fill="none" marker-end="url(#ai)"/>
+<path d="M660.0 422 V444" stroke="#1f2329" stroke-width="1.5" fill="none" marker-end="url(#ai)"/>
+<rect x="1000" y="200" width="236" height="270" rx="12" fill="#ffffff" stroke="#e2dfd5" stroke-width="1"/>
+<text x="1020" y="232" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#1f2329" text-anchor="start">MySQL 8</text>
+<text x="1020" y="252" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5a6068" text-anchor="start">database cleaning_system</text>
+<rect x="1020" y="268" width="196" height="150" rx="8" fill="#f3f1eb"/>
+<text x="1034" y="288" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="9.5" font-weight="700" fill="#5a6068" text-anchor="start" letter-spacing="1.6">ENTITIES</text>
+<text x="1034" y="308" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="11.5" font-weight="400" fill="#1f2329" text-anchor="start">User</text>
+<text x="1034" y="323" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="11.5" font-weight="400" fill="#1f2329" text-anchor="start">UserProfile</text>
+<text x="1034" y="338" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="11.5" font-weight="400" fill="#1f2329" text-anchor="start">Task</text>
+<text x="1034" y="353" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="11.5" font-weight="400" fill="#1f2329" text-anchor="start">Attendance</text>
+<text x="1034" y="368" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="11.5" font-weight="400" fill="#1f2329" text-anchor="start">Announcement</text>
+<text x="1034" y="383" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="11.5" font-weight="400" fill="#1f2329" text-anchor="start">WeekRoutine</text>
+<text x="1034" y="398" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="11.5" font-weight="400" fill="#1f2329" text-anchor="start">Image</text>
+<text x="1020" y="446" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#5a6068" text-anchor="start">Seeded with demo users</text>
+<text x="1020" y="462" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#5a6068" text-anchor="start">on first start.</text>
+<path d="M294 200 H380" stroke="#0891b2" stroke-width="1.6" fill="none" marker-start="url(#ah)" marker-end="url(#ah)"/>
+<text x="337" y="190" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5a6068" text-anchor="middle">REST + JWT</text>
+<path d="M940 335 H1000" stroke="#0891b2" stroke-width="1.6" fill="none" marker-start="url(#ah)" marker-end="url(#ah)"/>
+<text x="970" y="325" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5a6068" text-anchor="middle">JDBC</text>
+<rect x="44" y="560" width="1192" height="48" rx="10" fill="#ffffff" stroke="#e2dfd5" stroke-dasharray="5 4"/>
+<text x="64" y="589" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="12" font-weight="700" fill="#1f2329" text-anchor="start">docker-compose.yml</text>
+<text x="236" y="589" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5a6068" text-anchor="start">db: mysql:8.0, not published to the host   ·   backend: built on JDK 17, runs on a JRE 17, port 8765</text>
+<rect x="1000" y="74" width="236" height="100" rx="12" fill="#ffffff" stroke="#e2dfd5" stroke-width="1"/>
+<text x="1020" y="98" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="9.5" font-weight="700" fill="#5a6068" text-anchor="start" letter-spacing="1.6">LEGEND</text>
+<path d="M1020 118 H1066" stroke="#0891b2" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+<text x="1078" y="122" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2329" text-anchor="start">Request / data</text>
+<circle cx="1031" cy="148" r="11" fill="#0891b2"/><text x="1031" y="152" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<text x="1078" y="152" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2329" text-anchor="start">See the key in the README</text>
+</svg>

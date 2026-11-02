@@ -28,7 +28,6 @@ import com.cleaningsystem.backend.repository.TaskRepository;
 
 @RestController
 @RequestMapping("/api/admin")
-@CrossOrigin(origins = "*")
 public class AdminController {
     
     @Autowired

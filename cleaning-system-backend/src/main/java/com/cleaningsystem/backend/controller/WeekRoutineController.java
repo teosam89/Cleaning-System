@@ -21,7 +21,6 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/week-routines")
-@CrossOrigin(origins = "*")
 public class WeekRoutineController {
     
     @Autowired

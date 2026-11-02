@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="300" viewBox="0 0 1280 300" role="img" aria-labelledby="t d">
+<title id="t">How a task moves</title>
+<desc id="d">Five steps: an admin or supervisor creates a task, it is assigned or claimed from the Task Wall, the janitor starts and completes it, and the calendar and dashboard track it.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1.2 L9 5 L1 8.8" fill="none" stroke="#0891b2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker><marker id="ai" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1.2 L9 5 L1 8.8" fill="none" stroke="#1f2329" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="1280" height="300" rx="16" fill="#faf9f5"/>
+<text x="50" y="52" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="11" font-weight="700" fill="#0891b2" text-anchor="start" letter-spacing="2.2">HOW A TASK MOVES</text>
+<text x="168.0" y="86" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="11" font-weight="600" fill="#5a6068" text-anchor="middle" letter-spacing="1.5">01</text>
+<rect x="140.0" y="98" width="56" height="56" rx="14" fill="#ffffff" stroke="#0891b2" stroke-width="1.4"/>
+<path d="M159.0 113 h12 l7 7 v19 a2 2 0 0 1 -2 2 h-17 a2 2 0 0 1 -2 -2 v-24 a2 2 0 0 1 2 -2z" stroke="#0891b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M165.0 129 h9 M169.5 124.5 v9" stroke="#0891b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M212.0 126 H360.0" stroke="#0891b2" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+<text x="168.0" y="190" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16.5" font-weight="700" fill="#1f2329" text-anchor="middle">Create a task</text>
+<text x="168.0" y="214" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5a6068" text-anchor="middle">An admin or supervisor</text>
+<text x="168.0" y="232" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5a6068" text-anchor="middle">schedules it on the calendar:</text>
+<text x="168.0" y="250" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5a6068" text-anchor="middle">place, time, priority.</text>
+<text x="404.0" y="86" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="11" font-weight="600" fill="#5a6068" text-anchor="middle" letter-spacing="1.5">02</text>
+<rect x="376.0" y="98" width="56" height="56" rx="14" fill="#ffffff" stroke="#0891b2" stroke-width="1.4"/>
+<circle cx="404.0" cy="120" r="6" stroke="#0891b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M392.0 140 a12 10 0 0 1 24 0" stroke="#0891b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M448.0 126 H596.0" stroke="#0891b2" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+<text x="404.0" y="190" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16.5" font-weight="700" fill="#1f2329" text-anchor="middle">Assign or claim</text>
+<text x="404.0" y="214" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5a6068" text-anchor="middle">Assign it to a janitor, or</text>
+<text x="404.0" y="232" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5a6068" text-anchor="middle">leave it on the Task Wall</text>
+<text x="404.0" y="250" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5a6068" text-anchor="middle">for anyone to claim.</text>
+<text x="640.0" y="86" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="11" font-weight="600" fill="#5a6068" text-anchor="middle" letter-spacing="1.5">03</text>
+<rect x="612.0" y="98" width="56" height="56" rx="14" fill="#ffffff" stroke="#0891b2" stroke-width="1.4"/>
+<circle cx="640.0" cy="126" r="13" stroke="#0891b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M636.0 120 l10 6 l-10 6z" stroke="#0891b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M684.0 126 H832.0" stroke="#0891b2" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+<text x="640.0" y="190" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16.5" font-weight="700" fill="#1f2329" text-anchor="middle">Start</text>
+<text x="640.0" y="214" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5a6068" text-anchor="middle">The janitor opens the</text>
+<text x="640.0" y="232" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5a6068" text-anchor="middle">task and starts it from</text>
+<text x="640.0" y="250" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5a6068" text-anchor="middle">the task details page.</text>
+<text x="876.0" y="86" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="11" font-weight="600" fill="#5a6068" text-anchor="middle" letter-spacing="1.5">04</text>
+<rect x="848.0" y="98" width="56" height="56" rx="14" fill="#ffffff" stroke="#0891b2" stroke-width="1.4"/>
+<circle cx="876.0" cy="126" r="13" stroke="#0891b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M870.0 127 l4.5 4.5 l8 -9" stroke="#0891b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M920.0 126 H1068.0" stroke="#0891b2" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+<text x="876.0" y="190" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16.5" font-weight="700" fill="#1f2329" text-anchor="middle">Complete</text>
+<text x="876.0" y="214" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5a6068" text-anchor="middle">Marked complete with</text>
+<text x="876.0" y="232" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5a6068" text-anchor="middle">completion notes. A</text>
+<text x="876.0" y="250" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5a6068" text-anchor="middle">completion can be undone.</text>
+<text x="1112.0" y="86" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="11" font-weight="600" fill="#5a6068" text-anchor="middle" letter-spacing="1.5">05</text>
+<rect x="1084.0" y="98" width="56" height="56" rx="14" fill="#ffffff" stroke="#0891b2" stroke-width="1.4"/>
+<path d="M1101.0 138 v-10 M1112.0 138 v-22 M1123.0 138 v-15" stroke="#0891b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M1098.0 139 h28" stroke="#0891b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1112.0" y="190" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16.5" font-weight="700" fill="#1f2329" text-anchor="middle">Track</text>
+<text x="1112.0" y="214" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5a6068" text-anchor="middle">The calendar and the</text>
+<text x="1112.0" y="232" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5a6068" text-anchor="middle">dashboard show status,</text>
+<text x="1112.0" y="250" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#5a6068" text-anchor="middle">progress and counts.</text>
+</svg>
